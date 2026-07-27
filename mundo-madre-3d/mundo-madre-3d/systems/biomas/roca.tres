@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PerfilBioma" format=3 uid="uid://c8mjr4vw0q2ke"]
+
+[ext_resource type="Script" uid="uid://chftre4whwwtd" path="res://systems/perfil_bioma.gd" id="1_roca"]
+
+[resource]
+script = ExtResource("1_roca")
+nombre = "Roca"
+albedo = 0.35
+resistencia_termica = 11.0
+temperatura_referencia = 13.0
+metadata/_custom_type_script = "uid://chftre4whwwtd"

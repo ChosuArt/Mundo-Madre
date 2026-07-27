@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bwk4t8plmxq2n"]
+
+[ext_resource type="Script" uid="uid://bqk7t2mxw9plr" path="res://scripts/world/obstaculo_viento.gd" id="1_obst"]
+
+[node name="ObstaculoViento" type="StaticBody3D"]
+script = ExtResource("1_obst")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
