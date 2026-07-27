@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://b5q2h41skguei"]
+
+[ext_resource type="Script" uid="uid://bjye02bgqlw3d" path="res://scripts/world/main.gd" id="1_wbupf"]
+[ext_resource type="PackedScene" uid="uid://2om8fhfiwylf" path="res://scenes/world/demoland.tscn" id="2_f8fyy"]
+[ext_resource type="PackedScene" uid="uid://bg0xa3wvikout" path="res://scenes/cosmos/sol.tscn" id="3_f8fyy"]
+
+[node name="Main" type="Node3D" unique_id=638082360]
+script = ExtResource("1_wbupf")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=901676211]
+
+[node name="TimeLabel" type="Label" parent="HUD" unique_id=325439394]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -327.0
+offset_top = 20.0
+offset_right = -21.0
+offset_bottom = 153.0
+grow_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 24
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2128479353]
+transform = Transform3D(1, 0, 0, 0, 0.8614471, 0.50784737, 0, -0.50784737, 0.8614471, 0, 2.8657262, 3.7717957)
+
+[node name="Sol" parent="." unique_id=1547245921 instance=ExtResource("3_f8fyy")]
+
+[node name="MapaActual" type="Node3D" parent="." unique_id=1284506041]
+
+[node name="Demoland" parent="." unique_id=990085786 instance=ExtResource("2_f8fyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)

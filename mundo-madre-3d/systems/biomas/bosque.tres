@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PerfilBioma" format=3 uid="uid://duubxllgyt4cx"]
+
+[ext_resource type="Script" uid="uid://chftre4whwwtd" path="res://systems/perfil_bioma.gd" id="1_71pge"]
+
+[resource]
+script = ExtResource("1_71pge")
+nombre = "bosque"
+albedo = 0.15
+resistencia_termica = 9.0
+temperatura_referencia = 14.0
+metadata/_custom_type_script = "uid://chftre4whwwtd"

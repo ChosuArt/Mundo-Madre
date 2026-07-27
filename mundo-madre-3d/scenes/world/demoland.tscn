@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://2om8fhfiwylf"]
+
+[ext_resource type="Script" uid="uid://bdorw6mwu2w7" path="res://scripts/world/demoland.gd" id="1_56bxa"]
+[ext_resource type="PackedScene" uid="uid://b686537ophgxc" path="res://scenes/world/npc.tscn" id="2_ob11m"]
+[ext_resource type="Script" uid="uid://uuultf5pu6sd" path="res://scripts/world/superficie.gd" id="3_ob11m"]
+[ext_resource type="Script" uid="uid://ccpq5fnsg88om" path="res://scripts/world/aire_local.gd" id="4_3ds7w"]
+[ext_resource type="Script" uid="uid://46pu2i02rduo" path="res://systems/coordenada_global.gd" id="4_t2qeq"]
+[ext_resource type="Resource" uid="uid://cfeec6i304rfh" path="res://systems/biomas/llanura.tres" id="5_bflp3"]
+[ext_resource type="Script" uid="uid://b1njxy8w53obv" path="res://scripts/world/viento_regional.gd" id="6_u5d41"]
+[ext_resource type="Resource" uid="uid://cmixk2aym4inp" path="res://systems/biomas/mar.tres" id="7_4vctr"]
+[ext_resource type="Resource" uid="uid://duubxllgyt4cx" path="res://systems/biomas/bosque.tres" id="8_2rgwa"]
+[ext_resource type="Script" uid="uid://hsjpa2sf0buf" path="res://scripts/world/flecha_viento.gd" id="9_2rgwa"]
+
+[sub_resource type="Resource" id="Resource_j5ekv"]
+script = ExtResource("4_t2qeq")
+metadata/_custom_type_script = "uid://46pu2i02rduo"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k0u1k"]
+size = Vector3(30, 1, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vkp1k"]
+albedo_color = Color(0.35, 0.4, 0.32, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k0u1k"]
+size = Vector3(30, 1, 30)
+
+[node name="Demoland" type="Node3D" unique_id=990085786]
+script = ExtResource("1_56bxa")
+
+[node name="NPC" parent="." unique_id=1335131502 instance=ExtResource("2_ob11m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 5)
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=500280711]
+script = ExtResource("3_ob11m")
+ubicacion = SubResource("Resource_j5ekv")
+bioma = ExtResource("5_bflp3")
+es_referencia_del_mapa = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=642225362]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_k0u1k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1496927532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_vkp1k")
+mesh = SubResource("BoxMesh_k0u1k")
+
+[node name="AireLocal" type="Node" parent="." unique_id=952511868 node_paths=PackedStringArray("superficie")]
+script = ExtResource("4_3ds7w")
+superficie = NodePath("../Ground")
+
+[node name="VientoRegional" type="Node" parent="." unique_id=1670349239 node_paths=PackedStringArray("superficie")]
+script = ExtResource("6_u5d41")
+superficie = NodePath("../Ground")
+bioma_este = ExtResource("7_4vctr")
+bioma_sur = ExtResource("8_2rgwa")
+
+[node name="FlechaViento" type="Node3D" parent="." unique_id=1395512410 node_paths=PackedStringArray("viento")]
+script = ExtResource("9_2rgwa")
+viento = NodePath("../VientoRegional")
