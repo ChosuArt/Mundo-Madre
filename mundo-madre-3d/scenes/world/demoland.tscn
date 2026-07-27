@@ -9,7 +9,8 @@
 [ext_resource type="Script" uid="uid://b1njxy8w53obv" path="res://scripts/world/viento_regional.gd" id="6_u5d41"]
 [ext_resource type="Resource" uid="uid://cmixk2aym4inp" path="res://systems/biomas/mar.tres" id="7_4vctr"]
 [ext_resource type="Resource" uid="uid://duubxllgyt4cx" path="res://systems/biomas/bosque.tres" id="8_2rgwa"]
-[ext_resource type="Script" uid="uid://hsjpa2sf0buf" path="res://scripts/world/flecha_viento.gd" id="9_2rgwa"]
+[ext_resource type="PackedScene" uid="uid://bwk4t8plmxq2n" path="res://scenes/world/obstaculo_viento.tscn" id="10_obst"]
+[ext_resource type="Resource" uid="uid://c8mjr4vwzq2ke" path="res://systems/biomas/roca.tres" id="11_roca"]
 
 [sub_resource type="Resource" id="Resource_j5ekv"]
 script = ExtResource("4_t2qeq")
@@ -55,6 +56,8 @@ superficie = NodePath("../Ground")
 bioma_este = ExtResource("7_4vctr")
 bioma_sur = ExtResource("8_2rgwa")
 
-[node name="FlechaViento" type="Node3D" parent="." unique_id=1395512410 node_paths=PackedStringArray("viento")]
-script = ExtResource("9_2rgwa")
-viento = NodePath("../VientoRegional")
+[node name="RocaGrande" parent="." instance=ExtResource("10_obst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -4)
+radio = 1.2
+altura = 1.8
+bioma = ExtResource("11_roca")

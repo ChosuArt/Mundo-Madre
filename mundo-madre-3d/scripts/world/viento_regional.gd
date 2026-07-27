@@ -60,6 +60,7 @@ func _ready() -> void:
 		var bioma: PerfilBioma = get(&"bioma_%s" % nombre_rumbo)
 		if bioma != null:
 			_temperaturas_vecinos[nombre_rumbo] = bioma.temperatura_referencia
+	add_to_group("viento_regional")
 	SimClock.tick.connect(_on_sim_tick)
 
 

@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://bg0xa3wvikout"]
-
-[ext_resource type="Script" uid="uid://dw0erg4jgl38q" path="res://scripts/cosmos/sol.gd" id="1_er5xw"]
-
-[node name="Sol" type="Node3D" unique_id=1547245921]
-script = ExtResource("1_er5xw")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1085352281]

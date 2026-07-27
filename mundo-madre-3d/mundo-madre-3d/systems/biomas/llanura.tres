@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="PerfilBioma" format=3 uid="uid://cfeec6i304rfh"]
-
-[ext_resource type="Script" uid="uid://chftre4whwwtd" path="res://systems/perfil_bioma.gd" id="1_ni6a4"]
-
-[resource]
-script = ExtResource("1_ni6a4")
-metadata/_custom_type_script = "uid://chftre4whwwtd"

@@ -19,6 +19,15 @@ func obtener_velocidad_viento() -> float:
 func obtener_temperatura_superficie() -> float:
 	return superficie.temperatura
 
-
 func obtener_temperatura_aire() -> float:
 	return aire.temperatura
+
+func obtener_radiacion_recibida() -> float:
+	return superficie.radiacion_recibida
+
+func obtener_info_bioma() -> Dictionary:
+	return {
+		"nombre": superficie.bioma.nombre,
+		"resistencia_termica": superficie.bioma.resistencia_termica,
+		"albedo": superficie.bioma.albedo,
+	}
